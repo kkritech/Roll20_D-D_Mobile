@@ -1,0 +1,130 @@
+include ./tools/variables.pug
+include ./buttons.pug
+
+header.header-basic-stats
+    .container.g-0
+        .row.justify-content-center.g-0
+            .header-basic-stats__left
+                .header-basic-stats__left-top
+                    .header-basic-stats__avatar
+                        .header-basic-stats__avatar-image
+            .header-basic-stats__right-bot
+                .header-basic-stats__ac
+                    span
+                        | AC
+                        | 15
+                    span(name='attr_ac') 
+            .header-basic-stats__middle
+                .header-basic-stats__middle-bot
+                    //- span(name='attr_class_display')
+                    //- span
+                    //-     | /
+                    span  Warlock 3 &#10072; The Fiend Feral
+                    //- span(name='attr_background')
+                    .header-basic-stats__initiative    
+                        +initiativeButton
+
+
+            .header-basic-stats__right-bot
+                .header-basic-stats__hp-outer
+                    .header-basic-stats__hp-inner
+                        span.header-basic-stats__hp-bold
+                            | HP
+                        div    
+                            //- span(name='attr_hp')
+                            //- span
+                            //-     | /
+                            //- span(name='attr_hp_max')
+                            span
+                                | 12/21
+                .header-basic-stats__inspiration-outer
+                    .header-basic-stats__inspiration-inner
+                         span.header-basic-stats__inspiration-bold
+                            | HP
+
+
+
+
+                    //- .header-basic-stats__total-level
+                    
+                        //- .header-basic-stats__total-level-top
+                         
+                            //- span(name='attr_level')
+                        //- .header-basic-stats__total-level-bot
+                        //-     span
+                        //-         | Level
+                    //- .header-basic-stats__left-classes
+                    //-     //- Base Class
+                    //-     .header-basic-stats__class
+                    //-         input(type='hidden' name='attr_class')
+                    //-         .header-basic-stats__class-top
+                    //-             span(class='header-basic-stats__class-level' name='attr_base_level')
+                    //-         .header-basic-stats__class-bot
+                    //-             span(class='header-basic-stats__class-name' name='attr_class')
+
+                        
+                //- .header-basic-stats__left-bot
+                //-     .header-basic-stats__pb
+                //-         span
+                //-             | PB
+                //-         span(name='attr_pb')
+                //-     .header-basic-stats__speed
+                //-         .header-basic-stats__speed-top
+                //-             img(src=`${imagePrefix}header/speed-arrow.svg${imageSufix}` alt='Speed Icon')
+                //-         .header-basic-stats__speed-bot
+                //-             span(name='attr_speed')
+                //-             span
+                //-                 | FT
+            //- .header-basic-stats__middle
+            //-     .header-basic-stats__middle-top
+            //-         .header-basic-stats__avatar
+            //-             .header-basic-stats__avatar-image
+            //-             .header-basic-stats__initiative    
+            //-                 +initiativeButton
+            //-     .header-basic-stats__middle-bot
+            //- .header-basic-stats__right
+            //-     .header-basic-stats__right-top
+            //-         .header-basic-stats__right-classes
+            //-             //- Multiclass 1
+            //-             .header-basic-stats__class
+            //-                 input(type='hidden' name='attr_multiclass1_flag')
+            //-                 input(type='hidden' name='attr_multiclass1')    
+            //-                 .header-basic-stats__class-top
+            //-                     span(class='header-basic-stats__class-level' name='attr_multiclass1_lvl')
+            //-                 .header-basic-stats__class-bot
+            //-                     span(class='header-basic-stats__class-name' name='attr_multiclass1')
+
+            //-             //- Multiclass 2
+            //-             .header-basic-stats__class
+            //-                 input(type='hidden' name='attr_multiclass2_flag')
+            //-                 input(type='hidden' name='attr_multiclass2')
+            //-                 .header-basic-stats__class-top
+            //-                     span(class='header-basic-stats__class-level' name='attr_multiclass2_lvl')
+            //-                 .header-basic-stats__class-bot
+            //-                     span(class='header-basic-stats__class-name' name='attr_multiclass2')        
+
+            //-             //- Multiclass 3
+            //-             //- .header-basic-stats__class
+            //-             //-     input(type='hidden' name='attr_multiclass3_flag')
+            //-             //-     input(type='hidden' name='attr_multiclass3')
+            //-             //-     .header-basic-stats__class-top
+            //-             //-         span(class='header-basic-stats__class-level' name='attr_multiclass3_lvl')
+            //-             //-     .header-basic-stats__class-bot
+            //-             //-         span(class='header-basic-stats__class-name' name='attr_multiclass3')
+
+            //-         //- Hidden for now since there is no access to bio
+            //-         //- .header-basic-stats__bio
+            //-     .header-basic-stats__right-bot
+            //-         .header-basic-stats__ac
+            //-             span
+            //-                 | AC
+            //-             span(name='attr_ac')
+            //-         .header-basic-stats__hp-outer
+            //-             .header-basic-stats__hp-inner
+            //-                 span.header-basic-stats__hp-bold
+            //-                     | HP
+            //-                 div    
+            //-                     span(name='attr_hp')
+            //-                     span
+            //-                         | /
+            //-                     span(name='attr_hp_max')

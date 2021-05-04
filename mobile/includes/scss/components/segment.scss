@@ -1,0 +1,83 @@
+.segment {
+    $self: &;
+    $default-height: 125px;
+    $default-width: 125px;
+    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px !important;
+    position: relative;
+    background-color: transparent;
+    border: none;
+
+    &__hex {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 24px;
+        position: static;
+        width: 101%;
+        background: #702C91;
+        border-radius: 4px;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        margin: 0px 0px 0px -15px;
+
+        &::after {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: '';
+            height: $default-height;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: $default-width;
+        }
+
+        &:visited {
+            background-color: #702C91;
+            opacity: 0.5;
+            border-radius: 4px;
+        }
+    }
+
+    &__content {
+        position: static;
+        width: 68px;
+        height: 19px;
+        left: 48.5px;
+        top: 10px;
+
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 14px;
+        line-height: 19px;
+        /* identical to box height */
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.02em;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #FFFFFF;
+    }
+
+    .btn,
+    .btn:hover {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    &__button, &__button:hover {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+}
+

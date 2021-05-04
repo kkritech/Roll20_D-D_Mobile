@@ -1,0 +1,34 @@
+.charsheet {
+    padding: 0 !important;
+}
+
+.charsheet-inner {
+    $self: &;
+
+    background-color: #1E1523;
+    display: flex;
+    flex-flow: row wrap;
+
+    * {
+        -webkit-touch-callout: none;
+        user-select: none;
+        user-select: none;
+    }
+
+    &__space-bottom {
+        margin-bottom: 20px;
+    }
+}
+
+.charsheet .container,
+.charsheet .container-xxl,
+.charsheet .container-xl,
+.charsheet .container-lg,
+.charsheet .container-md,
+.charsheet .container-sm {
+    width: auto;
+}
+
+.charsheet button[type="roll"]::before {
+    content: '' !important;
+}

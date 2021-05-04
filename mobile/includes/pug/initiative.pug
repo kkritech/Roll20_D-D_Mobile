@@ -1,0 +1,8 @@
+mixin initiativeButton(roll = '@{wtype}&{template:simple} {{rname=^{init-u}}} {{mod=@{initiative_bonus}}} {{r1=[[@{initiative_style}+@{initiative_bonus}@{pbd_safe}[INIT] &{tracker}]]}} {{normal=1}} @{charname_output}', name = 'initiative', ariaLabel = `${name} roll`)
+    button.btn.roll.initiative(type='roll' value!=`@{${name}_roll}` aria-label=`${ariaLabel}`)
+        input(type='hidden' name=`attr_${name}_roll` value!=roll)
+        .initiative__hex
+            input.initiative__mod-hidden(type='hidden' name=`attr_${name}_bonus`)
+            span.initiative__mod(name=`attr_${name}_bonus` title="@{initiative_bonus}")
+        .initiative__plate
+            span.initiative__content(data-i18n=`${name}`)

@@ -1,0 +1,14 @@
+include ./tools/variables.pug
+include ./saving-throw.pug
+include ./title.pug
+
+section.saving-throws
+    .container
+        .row
+            .col
+                +sectionTitle('saving-throw')
+        .row
+            each ability in pc.abilities
+                .col-6.col-lg-12
+                    - const roll = `@{wtype}&{template:simple} {{rname=^{${ability.name}-save-u}}} {{mod=@{${ability.name}_save_bonus}}} {{r1=[[@{d20}+@{${ability.name}_save_bonus}@{pbd_safe}]]}} {{global=@{global_save_mod}}} @{charname_output}`
+                    +savingThrow(roll, ability.name)

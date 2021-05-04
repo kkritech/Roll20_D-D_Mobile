@@ -1,0 +1,9 @@
+mixin abilityButton(roll, name, ariaLabel = `${name} roll`)
+    button.btn.roll.ability(type='roll' name=`roll_${name}` value!=`@{${name}_roll}` aria-label=ariaLabel)
+        input(type='hidden' name=`attr_${name}_roll` value!=roll)
+        .ability__hex
+            input.ability__mod-hidden(type='hidden' name=`attr_${name}_mod`)
+            span.ability__mod(name=`attr_${name}_mod`)
+            span.ability__content(data-i18n=`${name}`)
+        .ability__pill
+            span.ability__score(name=`attr_${name}_base`)

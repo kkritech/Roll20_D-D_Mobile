@@ -1,0 +1,28 @@
+include ./tools/variables.pug
+
+section.attack-force
+    .container
+        .row
+            fieldset.repeating_attack
+                .col-12
+                    .attack-content
+                        .attack-content__attack-icon
+                        .attack-content__btn-force
+                            .attack-content__force
+                                span.attack-force Force
+                            .attack-content__ft
+                                span.attack-force(type='text' name="attr_atkcritrange")
+                                span.attack-force ft
+                        .attack-content__name
+                            input.attack-force(style="width: 100%;" type='text' name="attr_atkname")
+                        .attack-content__attack
+                            span.attack-content__damage(type='hidden') Attack
+                            input.skill__content-prof-hidden(style="width: 15%; color: #54b8ec;" type='text' name='attr_atkbonus')
+                            span.attack-content__border-right
+                            input.skill__content-prof-hidden(style="width: 10%; color: #EC0B8C;" type='text' name='attr_dmgbase')
+                            span.attack-content__damage(type='hidden') Damage
+                        .attack-content__border-bottom
+                        .attack-content__button-position
+                            button.attack-content__roll-button(type="roll" value="@{rollbase}" name="roll_attack")
+                                span.attack-content__button-name Roll
+                                span.attack-content__button-border-right

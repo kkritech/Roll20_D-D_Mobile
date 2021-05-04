@@ -1,0 +1,690 @@
+
+<article class="charsheet-inner">
+  <main class="main" id="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 charsheet-inner__space-bottom">
+          <div class="wrapper-header">
+            <div class="container header">
+              <div class="row">
+                <div class="col col-4"><span class="header__exit-button-user">Exit</span></div>
+                <div class="col col-8"><span class="header__user-name" name="attr_character_name"></span></div>
+              </div>
+            </div>
+            <header class="header-basic-stats">
+              <div class="container g-0">
+                <div class="row justify-content-center g-0">
+                  <div class="header-basic-stats__left">
+                    <div class="header-basic-stats__left-top">
+                      <div class="header-basic-stats__total-level">
+                        <div class="header-basic-stats__total-level-top"><span name="attr_level"></span></div>
+                        <div class="header-basic-stats__total-level-bot"><span>Level</span></div>
+                      </div>
+                      <div class="header-basic-stats__left-classes">
+                        <div class="header-basic-stats__class">
+                          <input type="hidden" name="attr_class"/>
+                          <div class="header-basic-stats__class-top"><span class="header-basic-stats__class-level" name="attr_base_level"></span></div>
+                          <div class="header-basic-stats__class-bot"><span class="header-basic-stats__class-name" name="attr_class"></span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="header-basic-stats__left-bot">
+                      <div class="header-basic-stats__pb"><span>PB</span><span name="attr_pb"></span></div>
+                      <div class="header-basic-stats__speed">
+                        <div class="header-basic-stats__speed-top"><img src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/header/speed-arrow.svg?sanitize=true" alt="Speed Icon"/></div>
+                        <div class="header-basic-stats__speed-bot"><span name="attr_speed"></span><span>FT</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header-basic-stats__middle">
+                    <div class="header-basic-stats__middle-top">
+                      <div class="header-basic-stats__avatar">
+                        <div class="header-basic-stats__avatar-image"></div>
+                        <div class="header-basic-stats__initiative">   
+                                      <button class="btn roll initiative" type="roll" value="@{initiative_roll}" aria-label="initiative roll">
+                                        <input type="hidden" name="attr_initiative_roll" value="@{wtype}&{template:simple} {{rname=^{init-u}}} {{mod=@{initiative_bonus}}} {{r1=[[@{initiative_style}+@{initiative_bonus}@{pbd_safe}[INIT] &{tracker}]]}} {{normal=1}} @{charname_output}"/>
+                                        <div class="initiative__hex">
+                                          <input class="initiative__mod-hidden" type="hidden" name="attr_initiative_bonus"/><span class="initiative__mod" name="attr_initiative_bonus" title="@{initiative_bonus}"></span>
+                                        </div>
+                                        <div class="initiative__plate"><span class="initiative__content" data-i18n="initiative"></span></div>
+                                      </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="header-basic-stats__middle-bot"></div>
+                  </div>
+                  <div class="header-basic-stats__right">
+                    <div class="header-basic-stats__right-top">
+                      <div class="header-basic-stats__right-classes">
+                        <div class="header-basic-stats__class">
+                          <input type="hidden" name="attr_multiclass1_flag"/>
+                          <input type="hidden" name="attr_multiclass1"/>
+                          <div class="header-basic-stats__class-top"><span class="header-basic-stats__class-level" name="attr_multiclass1_lvl"></span></div>
+                          <div class="header-basic-stats__class-bot"><span class="header-basic-stats__class-name" name="attr_multiclass1"></span></div>
+                        </div>
+                        <div class="header-basic-stats__class">
+                          <input type="hidden" name="attr_multiclass2_flag"/>
+                          <input type="hidden" name="attr_multiclass2"/>
+                          <div class="header-basic-stats__class-top"><span class="header-basic-stats__class-level" name="attr_multiclass2_lvl"></span></div>
+                          <div class="header-basic-stats__class-bot"><span class="header-basic-stats__class-name" name="attr_multiclass2">       </span></div>
+                        </div>
+                        <div class="header-basic-stats__class">
+                          <input type="hidden" name="attr_multiclass3_flag"/>
+                          <input type="hidden" name="attr_multiclass3"/>
+                          <div class="header-basic-stats__class-top"><span class="header-basic-stats__class-level" name="attr_multiclass3_lvl"></span></div>
+                          <div class="header-basic-stats__class-bot"><span class="header-basic-stats__class-name" name="attr_multiclass3"></span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="header-basic-stats__right-bot">
+                      <div class="header-basic-stats__ac"><span>AC</span><span name="attr_ac"></span></div>
+                      <div class="header-basic-stats__hp-outer">
+                        <div class="header-basic-stats__hp-inner"><span class="header-basic-stats__hp-bold">HP</span>
+                          <div>   <span name="attr_hp"></span><span>/</span><span name="attr_hp_max"></span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </header>
+          </div>
+        </div>
+        <div class="col-11 charsheet-inner__space-bottom">
+          <section class="segments">
+            <div class="container">
+              <div class="row">
+                <div class="col-6">
+                            <button class="btn roll segment segment__button" type="button" aria-label="Character">
+                              <div class="segment__hex"><span class="segment__content" name="Character">Character</span>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-6">
+                            <button class="btn roll segment segment__button" type="button" aria-label="Combat">
+                              <div class="segment__hex"><span class="segment__content" name="Combat">Combat</span>
+                              </div>
+                            </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-11 charsheet-inner__space-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-12"><span class="attack-type">Attack Type</span></div>
+              <div class="col-12 btn-row">
+                <div class="btn">
+                  <button class="spell-btn" type="button" value="spells"><span class="btn-type">Spells</span></button>
+                </div>
+                <div class="btn">
+                  <button class="attack-btn" type="button" value="attacks"><span class="btn-type">Attacks</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-11 charsheet-inner__space-bottom">
+          <div class="container purple-container">
+            <div class="row">
+              <div class="col-8">
+                <div class="purple-container__message"><span class="purple-container__text">Dismiss</span></div>
+              </div>
+              <div class="col-4">
+                <div class="purple-container__icon"><img src="../../images/x-circle-fill.png" alt=""/></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-11 charsheet-inner__space-bottom">
+          <div class="container purple-attack-container">
+            <div class="row">
+              <div class="col-12">
+                <div class="purple-attack-container__message"><span class="purple-attack-container__text">Diska uses Sickle</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-11 charsheet-inner__space-bottom">
+          <div class="container attack-roll-container">
+            <div class="row">
+              <div class="col-2">
+                <div class="attack-roll-container__icon"><img src="../../images/d20-White.png" alt=""/></div>
+              </div>
+              <div class="col-6 attack-damage-container__column-section">
+                <div class="attack-roll-container__name"><span class="attack-roll-container__text">Attack Roll</span></div>
+                <div class="attack-roll-container__roll"><span class="attack-roll-container__roll-type">1d20</span><span class="attack-roll-container__roll-value">+4</span></div>
+              </div>
+              <div class="col-1">
+                <div class="attack-roll-container__equal-icon"><span class="attack-roll-container__equal">=</span></div>
+              </div>
+              <div class="col-3">
+                <div class="attack-roll-container__equal-icon"><span class="attack-roll-container__text">22</span></div>
+                <div class="attack-roll-container__points"><span class="attack-roll-container__roll-type">18</span><span class="attack-roll-container__roll-value">+4</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-11 charsheet-inner__space-bottom">
+          <div class="container attack-damage-container">
+            <div class="row">
+              <div class="col-2">
+                <div class="attack-damage-container__icon"><img src="../../images/d10-white.png" alt=""/></div>
+              </div>
+              <div class="col-6 attack-damage-container__column-section">
+                <div class="attack-damage-container__name"><span class="attack-damage-container__text">Damage</span></div>
+                <div class="attack-damage-container__damage"><span class="attack-damage-container__value">1d20 piercing</span></div>
+              </div>
+              <div class="col-1">
+                <div class="attack-damage-container__equal-icon"><span class="attack-roll-container__equal">=</span></div>
+              </div>
+              <div class="col-3">
+                <div class="attack-damage-container__equal-icon"><span class="attack-damage-container__text">22</span></div>
+                <div class="attack-damage-container__damage attack-damage-container__points"><span class="attack-damage-container__value">18 + 4</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-11 charsheet-inner__space-bottom">
+          <section class="spell-force">
+            <div class="container">
+              <div class="row">
+                <fieldset class="repeating_spell">
+                  <div class="col-12">
+                    <div class="spell-content">
+                      <div class="spell-content__spell-icon"></div>
+                      <div class="spell-content__btn-force">
+                        <div class="spell-content__force"><span class="spell-force">Force</span></div>
+                        <div class="spell-content__ft"><span class="spell-force" type="text" name="attr_spellrange"></span><span class="spell-force">ft</span></div>
+                      </div>
+                      <div class="spell-content__name">
+                        <input class="spell-force" style="width: 100%;" type="text" name="attr_spellname"/>
+                      </div>
+                      <div class="spell-content__spell"><span class="spell-content__damage" type="hidden">Spell</span>
+                        <input class="skill__content-prof-hidden" style="width: 15%; color: #54b8ec;" type="text" name="attr_spellbonus"/><span class="spell-content__border-right"></span>
+                        <input class="skill__content-prof-hidden" style="width: 10%; color: #EC0B8C;" type="text" name="attr_spelldamage"/><span class="spell-content__damage" type="hidden">Damage</span>
+                      </div>
+                      <div class="spell-content__border-bottom"></div>
+                      <div class="spell-content__button-position">
+                        <button class="spell-content__roll-button" type="roll" value="@{rollbase}" name="roll_spell"><span class="spell-content__button-name">Roll</span><span class="spell-content__button-border-right"></span></button>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-11 charsheet-inner__space-bottom">
+          <section class="attack-force">
+            <div class="container">
+              <div class="row">
+                <fieldset class="repeating_attack">
+                  <div class="col-12">
+                    <div class="attack-content">
+                      <div class="attack-content__attack-icon"></div>
+                      <div class="attack-content__btn-force">
+                        <div class="attack-content__force"><span class="attack-force">Force</span></div>
+                        <div class="attack-content__ft"><span class="attack-force" type="text" name="attr_atkcritrange"></span><span class="attack-force">ft</span></div>
+                      </div>
+                      <div class="attack-content__name">
+                        <input class="attack-force" style="width: 100%;" type="text" name="attr_atkname"/>
+                      </div>
+                      <div class="attack-content__attack"><span class="attack-content__damage" type="hidden">Attack</span>
+                        <input class="skill__content-prof-hidden" style="width: 15%; color: #54b8ec;" type="text" name="attr_atkbonus"/><span class="attack-content__border-right"></span>
+                        <input class="skill__content-prof-hidden" style="width: 10%; color: #EC0B8C;" type="text" name="attr_dmgbase"/><span class="attack-content__damage" type="hidden">Damage</span>
+                      </div>
+                      <div class="attack-content__border-bottom"></div>
+                      <div class="attack-content__button-position">
+                        <button class="attack-content__roll-button" type="roll" value="@{rollbase}" name="roll_attack"><span class="attack-content__button-name">Roll</span><span class="attack-content__button-border-right"></span></button>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-11 charsheet-inner__space-bottom">
+          <section class="abilities">
+            <div class="container">
+              <div class="row">
+                <div class="col"><span class="title"><span class="title__name" data-i18n="abilities"></span><span class="title__divider-outer"><span class="title__divider-inner"></span></span></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4 col-lg-2">
+                            <button class="btn roll ability" type="roll" name="roll_strength" value="@{strength_roll}" aria-label="strength roll">
+                              <input type="hidden" name="attr_strength_roll" value="@{wtype}&{template:simple} {{rname=^{strength-u}}} {{mod=@{strength_mod}@{jack_bonus}}} {{r1=[[@{d20}+@{strength_mod}@{jack_attr}[STR]]]}} @{rtype}+@{strength_mod}@{jack_attr}[STR]]]}} @{charname_output}"/>
+                              <div class="ability__hex">
+                                <input class="ability__mod-hidden" type="hidden" name="attr_strength_mod"/><span class="ability__mod" name="attr_strength_mod"></span><span class="ability__content" data-i18n="strength"></span>
+                              </div>
+                              <div class="ability__pill"><span class="ability__score" name="attr_strength_base"></span></div>
+                            </button>
+                </div>
+                <div class="col-4 col-lg-2">
+                            <button class="btn roll ability" type="roll" name="roll_dexterity" value="@{dexterity_roll}" aria-label="dexterity roll">
+                              <input type="hidden" name="attr_dexterity_roll" value="@{wtype}&{template:simple} {{rname=^{dexterity-u}}} {{mod=@{dexterity_mod}@{jack_bonus}}} {{r1=[[@{d20}+@{dexterity_mod}@{jack_attr}[DEX]]]}} @{rtype}+@{dexterity_mod}@{jack_attr}[DEX]]]}} @{charname_output}"/>
+                              <div class="ability__hex">
+                                <input class="ability__mod-hidden" type="hidden" name="attr_dexterity_mod"/><span class="ability__mod" name="attr_dexterity_mod"></span><span class="ability__content" data-i18n="dexterity"></span>
+                              </div>
+                              <div class="ability__pill"><span class="ability__score" name="attr_dexterity_base"></span></div>
+                            </button>
+                </div>
+                <div class="col-4 col-lg-2">
+                            <button class="btn roll ability" type="roll" name="roll_constitution" value="@{constitution_roll}" aria-label="constitution roll">
+                              <input type="hidden" name="attr_constitution_roll" value="@{wtype}&{template:simple} {{rname=^{constitution-u}}} {{mod=@{constitution_mod}@{jack_bonus}}} {{r1=[[@{d20}+@{constitution_mod}@{jack_attr}[CON]]]}} @{rtype}+@{constitution_mod}@{jack_attr}[CON]]]}} @{charname_output}"/>
+                              <div class="ability__hex">
+                                <input class="ability__mod-hidden" type="hidden" name="attr_constitution_mod"/><span class="ability__mod" name="attr_constitution_mod"></span><span class="ability__content" data-i18n="constitution"></span>
+                              </div>
+                              <div class="ability__pill"><span class="ability__score" name="attr_constitution_base"></span></div>
+                            </button>
+                </div>
+                <div class="col-4 col-lg-2">
+                            <button class="btn roll ability" type="roll" name="roll_intelligence" value="@{intelligence_roll}" aria-label="intelligence roll">
+                              <input type="hidden" name="attr_intelligence_roll" value="@{wtype}&{template:simple} {{rname=^{intelligence-u}}} {{mod=@{intelligence_mod}@{jack_bonus}}} {{r1=[[@{d20}+@{intelligence_mod}@{jack_attr}[INT]]]}} @{rtype}+@{intelligence_mod}@{jack_attr}[INT]]]}} @{charname_output}"/>
+                              <div class="ability__hex">
+                                <input class="ability__mod-hidden" type="hidden" name="attr_intelligence_mod"/><span class="ability__mod" name="attr_intelligence_mod"></span><span class="ability__content" data-i18n="intelligence"></span>
+                              </div>
+                              <div class="ability__pill"><span class="ability__score" name="attr_intelligence_base"></span></div>
+                            </button>
+                </div>
+                <div class="col-4 col-lg-2">
+                            <button class="btn roll ability" type="roll" name="roll_wisdom" value="@{wisdom_roll}" aria-label="wisdom roll">
+                              <input type="hidden" name="attr_wisdom_roll" value="@{wtype}&{template:simple} {{rname=^{wisdom-u}}} {{mod=@{wisdom_mod}@{jack_bonus}}} {{r1=[[@{d20}+@{wisdom_mod}@{jack_attr}[WIS]]]}} @{rtype}+@{wisdom_mod}@{jack_attr}[WIS]]]}} @{charname_output}"/>
+                              <div class="ability__hex">
+                                <input class="ability__mod-hidden" type="hidden" name="attr_wisdom_mod"/><span class="ability__mod" name="attr_wisdom_mod"></span><span class="ability__content" data-i18n="wisdom"></span>
+                              </div>
+                              <div class="ability__pill"><span class="ability__score" name="attr_wisdom_base"></span></div>
+                            </button>
+                </div>
+                <div class="col-4 col-lg-2">
+                            <button class="btn roll ability" type="roll" name="roll_charisma" value="@{charisma_roll}" aria-label="charisma roll">
+                              <input type="hidden" name="attr_charisma_roll" value="@{wtype}&{template:simple} {{rname=^{charisma-u}}} {{mod=@{charisma_mod}@{jack_bonus}}} {{r1=[[@{d20}+@{charisma_mod}@{jack_attr}[CHA]]]}} @{rtype}+@{charisma_mod}@{jack_attr}[CHA]]]}} @{charname_output}"/>
+                              <div class="ability__hex">
+                                <input class="ability__mod-hidden" type="hidden" name="attr_charisma_mod"/><span class="ability__mod" name="attr_charisma_mod"></span><span class="ability__content" data-i18n="charisma"></span>
+                              </div>
+                              <div class="ability__pill"><span class="ability__score" name="attr_charisma_base"></span></div>
+                            </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-11 charsheet-inner__space-bottom">
+          <section class="saving-throws">
+            <div class="container">
+              <div class="row">
+                <div class="col"><span class="title"><span class="title__name" data-i18n="saving-throw"></span><span class="title__divider-outer"><span class="title__divider-inner"></span></span></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6 col-lg-12">
+                            <input class="saving-throw__content-prof-hidden" type="hidden" name="attr_strength_save_prof"/>
+                            <button class="btn roll saving-throw" type="roll" value="@{strength_save_roll}" aria-label="strength save roll">
+                              <input type="hidden" name="attr_strength_save_roll" value="@{wtype}&{template:simple} {{rname=^{strength-save-u}}} {{mod=@{strength_save_bonus}}} {{r1=[[@{d20}+@{strength_save_bonus}@{pbd_safe}]]}} {{global=@{global_save_mod}}} @{charname_output}"/>
+                              <div class="saving-throw__pill-sml">
+                                <input class="saving-throw__mod-hidden" type="hidden" name="attr_strength_save_bonus"/><span class="saving-throw__mod" name="attr_strength_save_bonus"></span>
+                              </div>
+                              <div class="saving-throw__pill-lrg"><span class="saving-throw__content"><span class="saving-throw__content-name" data-i18n="strength"></span><span class="saving-throw__content-save-string">Save</span></span></div>
+                            </button>
+                </div>
+                <div class="col-6 col-lg-12">
+                            <input class="saving-throw__content-prof-hidden" type="hidden" name="attr_dexterity_save_prof"/>
+                            <button class="btn roll saving-throw" type="roll" value="@{dexterity_save_roll}" aria-label="dexterity save roll">
+                              <input type="hidden" name="attr_dexterity_save_roll" value="@{wtype}&{template:simple} {{rname=^{dexterity-save-u}}} {{mod=@{dexterity_save_bonus}}} {{r1=[[@{d20}+@{dexterity_save_bonus}@{pbd_safe}]]}} {{global=@{global_save_mod}}} @{charname_output}"/>
+                              <div class="saving-throw__pill-sml">
+                                <input class="saving-throw__mod-hidden" type="hidden" name="attr_dexterity_save_bonus"/><span class="saving-throw__mod" name="attr_dexterity_save_bonus"></span>
+                              </div>
+                              <div class="saving-throw__pill-lrg"><span class="saving-throw__content"><span class="saving-throw__content-name" data-i18n="dexterity"></span><span class="saving-throw__content-save-string">Save</span></span></div>
+                            </button>
+                </div>
+                <div class="col-6 col-lg-12">
+                            <input class="saving-throw__content-prof-hidden" type="hidden" name="attr_constitution_save_prof"/>
+                            <button class="btn roll saving-throw" type="roll" value="@{constitution_save_roll}" aria-label="constitution save roll">
+                              <input type="hidden" name="attr_constitution_save_roll" value="@{wtype}&{template:simple} {{rname=^{constitution-save-u}}} {{mod=@{constitution_save_bonus}}} {{r1=[[@{d20}+@{constitution_save_bonus}@{pbd_safe}]]}} {{global=@{global_save_mod}}} @{charname_output}"/>
+                              <div class="saving-throw__pill-sml">
+                                <input class="saving-throw__mod-hidden" type="hidden" name="attr_constitution_save_bonus"/><span class="saving-throw__mod" name="attr_constitution_save_bonus"></span>
+                              </div>
+                              <div class="saving-throw__pill-lrg"><span class="saving-throw__content"><span class="saving-throw__content-name" data-i18n="constitution"></span><span class="saving-throw__content-save-string">Save</span></span></div>
+                            </button>
+                </div>
+                <div class="col-6 col-lg-12">
+                            <input class="saving-throw__content-prof-hidden" type="hidden" name="attr_intelligence_save_prof"/>
+                            <button class="btn roll saving-throw" type="roll" value="@{intelligence_save_roll}" aria-label="intelligence save roll">
+                              <input type="hidden" name="attr_intelligence_save_roll" value="@{wtype}&{template:simple} {{rname=^{intelligence-save-u}}} {{mod=@{intelligence_save_bonus}}} {{r1=[[@{d20}+@{intelligence_save_bonus}@{pbd_safe}]]}} {{global=@{global_save_mod}}} @{charname_output}"/>
+                              <div class="saving-throw__pill-sml">
+                                <input class="saving-throw__mod-hidden" type="hidden" name="attr_intelligence_save_bonus"/><span class="saving-throw__mod" name="attr_intelligence_save_bonus"></span>
+                              </div>
+                              <div class="saving-throw__pill-lrg"><span class="saving-throw__content"><span class="saving-throw__content-name" data-i18n="intelligence"></span><span class="saving-throw__content-save-string">Save</span></span></div>
+                            </button>
+                </div>
+                <div class="col-6 col-lg-12">
+                            <input class="saving-throw__content-prof-hidden" type="hidden" name="attr_wisdom_save_prof"/>
+                            <button class="btn roll saving-throw" type="roll" value="@{wisdom_save_roll}" aria-label="wisdom save roll">
+                              <input type="hidden" name="attr_wisdom_save_roll" value="@{wtype}&{template:simple} {{rname=^{wisdom-save-u}}} {{mod=@{wisdom_save_bonus}}} {{r1=[[@{d20}+@{wisdom_save_bonus}@{pbd_safe}]]}} {{global=@{global_save_mod}}} @{charname_output}"/>
+                              <div class="saving-throw__pill-sml">
+                                <input class="saving-throw__mod-hidden" type="hidden" name="attr_wisdom_save_bonus"/><span class="saving-throw__mod" name="attr_wisdom_save_bonus"></span>
+                              </div>
+                              <div class="saving-throw__pill-lrg"><span class="saving-throw__content"><span class="saving-throw__content-name" data-i18n="wisdom"></span><span class="saving-throw__content-save-string">Save</span></span></div>
+                            </button>
+                </div>
+                <div class="col-6 col-lg-12">
+                            <input class="saving-throw__content-prof-hidden" type="hidden" name="attr_charisma_save_prof"/>
+                            <button class="btn roll saving-throw" type="roll" value="@{charisma_save_roll}" aria-label="charisma save roll">
+                              <input type="hidden" name="attr_charisma_save_roll" value="@{wtype}&{template:simple} {{rname=^{charisma-save-u}}} {{mod=@{charisma_save_bonus}}} {{r1=[[@{d20}+@{charisma_save_bonus}@{pbd_safe}]]}} {{global=@{global_save_mod}}} @{charname_output}"/>
+                              <div class="saving-throw__pill-sml">
+                                <input class="saving-throw__mod-hidden" type="hidden" name="attr_charisma_save_bonus"/><span class="saving-throw__mod" name="attr_charisma_save_bonus"></span>
+                              </div>
+                              <div class="saving-throw__pill-lrg"><span class="saving-throw__content"><span class="saving-throw__content-name" data-i18n="charisma"></span><span class="saving-throw__content-save-string">Save</span></span></div>
+                            </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-11 charsheet-inner__space-bottom">
+          <section class="skills">
+            <div class="container">
+              <div class="row">
+                <div class="col"><span class="title"><span class="title__name" data-i18n="skills"></span><span class="title__divider-outer"><span class="title__divider-inner"></span></span></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{acrobatics_roll}" aria-label="acrobatics roll">
+                              <input type="hidden" name="attr_acrobatics_roll" value="@{wtype}&{template:simple} {{rname=^{acrobatics-u}}} {{mod=@{acrobatics_bonus}}} {{r1=[[@{d20}+@{acrobatics_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-acrobatics.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-acrobatics-2x.png 2x" alt="acrobatics Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="acrobatics"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_acrobatics_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_acrobatics_bonus"/><span class="skill__mod" name="attr_acrobatics_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{animal_handling_roll}" aria-label="animal_handling roll">
+                              <input type="hidden" name="attr_animal_handling_roll" value="@{wtype}&{template:simple} {{rname=^{animal_handling-u}}} {{mod=@{animal_handling_bonus}}} {{r1=[[@{d20}+@{animal_handling_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-animal_handling.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-animal_handling-2x.png 2x" alt="animal_handling Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="animal_handling"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_animal_handling_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_animal_handling_bonus"/><span class="skill__mod" name="attr_animal_handling_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{arcana_roll}" aria-label="arcana roll">
+                              <input type="hidden" name="attr_arcana_roll" value="@{wtype}&{template:simple} {{rname=^{arcana-u}}} {{mod=@{arcana_bonus}}} {{r1=[[@{d20}+@{arcana_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-arcana.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-arcana-2x.png 2x" alt="arcana Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="arcana"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_arcana_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_arcana_bonus"/><span class="skill__mod" name="attr_arcana_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{athletics_roll}" aria-label="athletics roll">
+                              <input type="hidden" name="attr_athletics_roll" value="@{wtype}&{template:simple} {{rname=^{athletics-u}}} {{mod=@{athletics_bonus}}} {{r1=[[@{d20}+@{athletics_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-athletics.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-athletics-2x.png 2x" alt="athletics Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="athletics"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_athletics_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_athletics_bonus"/><span class="skill__mod" name="attr_athletics_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{deception_roll}" aria-label="deception roll">
+                              <input type="hidden" name="attr_deception_roll" value="@{wtype}&{template:simple} {{rname=^{deception-u}}} {{mod=@{deception_bonus}}} {{r1=[[@{d20}+@{deception_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-deception.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-deception-2x.png 2x" alt="deception Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="deception"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_deception_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_deception_bonus"/><span class="skill__mod" name="attr_deception_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{history_roll}" aria-label="history roll">
+                              <input type="hidden" name="attr_history_roll" value="@{wtype}&{template:simple} {{rname=^{history-u}}} {{mod=@{history_bonus}}} {{r1=[[@{d20}+@{history_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-history.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-history-2x.png 2x" alt="history Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="history"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_history_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_history_bonus"/><span class="skill__mod" name="attr_history_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{insight_roll}" aria-label="insight roll">
+                              <input type="hidden" name="attr_insight_roll" value="@{wtype}&{template:simple} {{rname=^{insight-u}}} {{mod=@{insight_bonus}}} {{r1=[[@{d20}+@{insight_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-insight.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-insight-2x.png 2x" alt="insight Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="insight"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_insight_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_insight_bonus"/><span class="skill__mod" name="attr_insight_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{intimidation_roll}" aria-label="intimidation roll">
+                              <input type="hidden" name="attr_intimidation_roll" value="@{wtype}&{template:simple} {{rname=^{intimidation-u}}} {{mod=@{intimidation_bonus}}} {{r1=[[@{d20}+@{intimidation_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-intimidation.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-intimidation-2x.png 2x" alt="intimidation Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="intimidation"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_intimidation_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_intimidation_bonus"/><span class="skill__mod" name="attr_intimidation_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{investigation_roll}" aria-label="investigation roll">
+                              <input type="hidden" name="attr_investigation_roll" value="@{wtype}&{template:simple} {{rname=^{investigation-u}}} {{mod=@{investigation_bonus}}} {{r1=[[@{d20}+@{investigation_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-investigation.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-investigation-2x.png 2x" alt="investigation Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="investigation"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_investigation_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_investigation_bonus"/><span class="skill__mod" name="attr_investigation_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{medicine_roll}" aria-label="medicine roll">
+                              <input type="hidden" name="attr_medicine_roll" value="@{wtype}&{template:simple} {{rname=^{medicine-u}}} {{mod=@{medicine_bonus}}} {{r1=[[@{d20}+@{medicine_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-medicine.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-medicine-2x.png 2x" alt="medicine Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="medicine"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_medicine_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_medicine_bonus"/><span class="skill__mod" name="attr_medicine_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{nature_roll}" aria-label="nature roll">
+                              <input type="hidden" name="attr_nature_roll" value="@{wtype}&{template:simple} {{rname=^{nature-u}}} {{mod=@{nature_bonus}}} {{r1=[[@{d20}+@{nature_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-nature.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-nature-2x.png 2x" alt="nature Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="nature"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_nature_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_nature_bonus"/><span class="skill__mod" name="attr_nature_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{perception_roll}" aria-label="perception roll">
+                              <input type="hidden" name="attr_perception_roll" value="@{wtype}&{template:simple} {{rname=^{perception-u}}} {{mod=@{perception_bonus}}} {{r1=[[@{d20}+@{perception_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-perception.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-perception-2x.png 2x" alt="perception Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="perception"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_perception_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_perception_bonus"/><span class="skill__mod" name="attr_perception_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{performance_roll}" aria-label="performance roll">
+                              <input type="hidden" name="attr_performance_roll" value="@{wtype}&{template:simple} {{rname=^{performance-u}}} {{mod=@{performance_bonus}}} {{r1=[[@{d20}+@{performance_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-performance.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-performance-2x.png 2x" alt="performance Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="performance"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_performance_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_performance_bonus"/><span class="skill__mod" name="attr_performance_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{persuasion_roll}" aria-label="persuasion roll">
+                              <input type="hidden" name="attr_persuasion_roll" value="@{wtype}&{template:simple} {{rname=^{persuasion-u}}} {{mod=@{persuasion_bonus}}} {{r1=[[@{d20}+@{persuasion_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-persuasion.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-persuasion-2x.png 2x" alt="persuasion Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="persuasion"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_persuasion_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_persuasion_bonus"/><span class="skill__mod" name="attr_persuasion_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{religion_roll}" aria-label="religion roll">
+                              <input type="hidden" name="attr_religion_roll" value="@{wtype}&{template:simple} {{rname=^{religion-u}}} {{mod=@{religion_bonus}}} {{r1=[[@{d20}+@{religion_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-religion.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-religion-2x.png 2x" alt="religion Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="religion"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_religion_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_religion_bonus"/><span class="skill__mod" name="attr_religion_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{sleight_of_hand_roll}" aria-label="sleight_of_hand roll">
+                              <input type="hidden" name="attr_sleight_of_hand_roll" value="@{wtype}&{template:simple} {{rname=^{sleight_of_hand-u}}} {{mod=@{sleight_of_hand_bonus}}} {{r1=[[@{d20}+@{sleight_of_hand_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-sleight_of_hand.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-sleight_of_hand-2x.png 2x" alt="sleight_of_hand Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="sleight_of_hand"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_sleight_of_hand_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_sleight_of_hand_bonus"/><span class="skill__mod" name="attr_sleight_of_hand_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{stealth_roll}" aria-label="stealth roll">
+                              <input type="hidden" name="attr_stealth_roll" value="@{wtype}&{template:simple} {{rname=^{stealth-u}}} {{mod=@{stealth_bonus}}} {{r1=[[@{d20}+@{stealth_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-stealth.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-stealth-2x.png 2x" alt="stealth Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="stealth"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_stealth_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_stealth_bonus"/><span class="skill__mod" name="attr_stealth_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+                <div class="col-12">
+                            <button class="btn roll skill" type="roll" value="@{survival_roll}" aria-label="survival roll">
+                              <input type="hidden" name="attr_survival_roll" value="@{wtype}&{template:simple} {{rname=^{survival-u}}} {{mod=@{survival_bonus}}} {{r1=[[@{d20}+@{survival_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}"/>
+                              <div class="skill__wrapper">
+                                <div class="skill__left">
+                                  <div class="skill__icon"><img class="skill__icon-image" src="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-survival.png" srcset="https://images.charactersheet.feature.roll20preflight.net/dnd5e/skills/skill-survival-2x.png 2x" alt="survival Skill Icon" loading="lazy"/></div>
+                                  <div class="skill__content"><span class="skill__content-name" data-i18n="survival"></span>
+                                    <input class="skill__content-prof-hidden" type="hidden" name="attr_survival_prof"/><span class="skill__content-prof" data-i18n="proficient"></span>
+                                  </div>
+                                </div>
+                                <div class="skill__right">
+                                  <input class="skill__mod-hidden" type="hidden" name="attr_survival_bonus"/><span class="skill__mod" name="attr_survival_bonus"></span>
+                                </div>
+                              </div>
+                            </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+</article>

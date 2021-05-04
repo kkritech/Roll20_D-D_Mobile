@@ -1,0 +1,95 @@
+// Grid Breakpoints as seen here: https://getbootstrap.com/docs/5.0/layout/grid/
+$xxl: 1320px;
+$xl: 1140px;
+$lg: 960px;
+$md: 720px;
+$sm: 576px;
+$xsml: 410px;
+
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap');
+
+$primary-font-stack: 'Nunito', sans-serif;
+$primary-font-size: 1em;
+
+$primary-font-weight: 900;
+$secondary-font-weight: 700;
+$tertiary-font-weight: 400;
+
+$xlrg-font-size: 38px;
+$lrg-font-size: 30px;
+$mdm-lrg-font-size: 24px;
+$mdm-font-size: 18px;
+$sml-font-size: 16px;
+$xsml-font-size: 14px;
+$xxsml-font-size: 13px;
+$xxxsml-font-size: 12px;
+
+// Colors
+$primary-background-color: #ec008c;
+$secondary-background-color: #56276c;
+$tertiary-background-color: #29202e;
+
+$primary-border-color: #937C9F;
+
+$primary-font-color: white;
+$secondary-font-color: #ADA9AF;
+
+// Component Based
+// General
+$app-background-color: #7b329c;
+$section-background-color: #2E2534;
+
+// Proficiency
+$proficient-color: #54b8ec;
+
+// HP
+$hp-background-color: #403744;
+$hp-border-color: #009044;
+
+// Component Colors
+// Buttons
+$primary-saving-throw-color: #AB65C9;
+
+// Header
+$primary-header-color: #482B55;
+$secondary-header-color: #372141;
+$tertiary-header-color: #382243;
+
+// Sidebar
+$primary-sidebar-color: #4C275D;
+
+// Icon Bar
+$primary-icon-bar-color: #33273A;
+$primary-icon-bar-border-color: #6E2D8B;
+
+// Alpha Value Colors
+$secondary-background-alpha: rgba(41, 32, 46, 0.8);
+
+$primary-saving-throw-alpha-1: rgba(171, 101, 201, 0.1);
+$secondary-saving-throw-alpha-1: rgba(95, 192, 238, 0);
+
+$primary-saving-throw-alpha-2: rgba(171, 101, 201, 0.25);
+$secondary-saving-throw-alpha-2: rgba(95, 192, 238, 0.25);
+
+// Gradients
+$primary-gradient: linear-gradient(90deg, rgba(110, 45, 140, 0) 20%, #6e2d8c 50%, rgba(110, 45, 140, 0) 80%);
+
+// Shadows
+$primary-drop-shadow: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+$secondary-drop-shadow: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .2));
+
+// Borders
+$primary-border-size: 1px;
+
+$primary-border-radius: 5px;
+$secondary-border-radius: 10px;
+$tertiary-border-radius: 30px;
+
+// Images Paths
+$image-prefix: 'https://images.charactersheet.feature.roll20preflight.net/dnd5e/';
+$image-sufix: '?sanitize=true';
+
+//Classes
+$classes: ('Artificer', 'Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard');

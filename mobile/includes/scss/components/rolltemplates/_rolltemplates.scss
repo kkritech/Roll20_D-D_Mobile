@@ -1,0 +1,100 @@
+.sheet-rolltemplate-simple {
+    box-sizing: border-box;
+
+    .sheet-container {
+        align-items: center;
+        background: $app-background-color;
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        padding: 24px 16px;
+        width: auto;
+
+        .sheet-result {
+            display: flex;
+            flex-basis: 50px;
+            flex-grow: 1;
+            justify-content: flex-end;
+            order: 2;
+            text-align: right;
+
+            .inlinerollresult {
+                background: transparent;
+                border: none;
+                color: $primary-font-color;
+                font-family: $primary-font-stack;
+                font-size: $mdm-lrg-font-size;
+                font-weight: $primary-font-weight;
+                padding: 0;
+            }
+
+            span {
+                background: transparent;
+                border: none;
+                color: $primary-font-color;
+                font-family: $primary-font-stack;
+                font-size: $mdm-font-size;
+                font-weight: $primary-font-weight;
+                padding: 0;
+            }
+        }
+
+        .sheet-advspacer {
+            border-left: 1.5px solid #fff;
+            border-radius: 40px;
+            margin-left: 6px;
+            margin-right: 6px;
+            opacity: 70%;
+        }
+
+        .sheet-label {
+            order: 1;
+            padding-left: 65px;
+            position: relative;
+
+            &::before {
+                background-image: url('#{$image-prefix}avatar/avatar-1.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 100%;
+                content: '';
+                display: block;
+                height: 55px;
+                left: 0;
+                position: absolute;
+                top: -22.5%;
+                width: 55px;
+            }
+
+            span {
+                align-self: flex-start;
+                color: $primary-font-color;
+                display: flex;
+                flex-flow: column wrap;
+                font-family: $primary-font-stack;
+                font-size: $xsml-font-size;
+                font-weight: $primary-font-weight;
+                justify-content: center;
+                text-align: left;
+
+                span {
+                    color: $primary-font-color;
+                    display: block;
+                    font-family: $primary-font-stack;
+                    font-size: $xsml-font-size;
+                    font-weight: $secondary-font-weight;
+                    text-align: left;
+
+                    &::before {
+                        content: '1d20 +';
+                    }
+                }
+            }
+        }
+
+        .sheet-charname {
+            display: none !important;
+        }
+    }
+}

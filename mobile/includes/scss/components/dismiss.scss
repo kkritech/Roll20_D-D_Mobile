@@ -1,0 +1,46 @@
+.purple-container {
+
+    $self: &;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    position: static;
+    background: #702C91;
+    border-radius: 8px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 8%;
+    width: 25% !important;
+    height: 32px;
+    float: right;
+    position: relative;
+
+    .col-8 {
+        margin-top: 0;
+    }
+
+    &__message {
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        margin: 0 40%;
+    }
+
+    &__icon img{
+        // background-image: url(../../images/x-circle-fill.png);
+        position: absolute;
+        top: 25%;
+        right: 10%;
+    }
+}

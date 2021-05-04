@@ -1,0 +1,31 @@
+include ./variables.pug
+
+.default-values.default-values--hidden
+    input(type='hidden' name='attr_charname_output' value!='{{charname=@{character_name}}}')
+    input(type='hidden' name='attr_d20' value!='d20')
+    input(type='hidden' name='attr_rtype' value!='{{always=1}} {{r2=[[@{d20}')
+    input(type='hidden' name='attr_wtype' value!='')
+    input(type='hidden' name='attr_global_skill_mod' value!='')
+    input(type='hidden' name='attr_global_save_mod' value!='')
+    input(type='hidden' name='attr_initiative_style' value!='@{d20}')
+    input.current-page(type='hidden' name='attr_current_page' value!='core')
+    input(type='hidden' name='attr_initiative_bonus' value='0')
+    input(type='hidden' name='attr_level' value='1')
+    input(type='hidden' name='attr_base_level' value='1')
+    input(type='hidden' name='attr_multiclass1_lvl' value='1')
+    input(type='hidden' name='attr_multiclass2_lvl' value='1')
+    input(type='hidden' name='attr_multiclass3_lvl' value='1')
+    input(type='hidden' name='attr_ac' value='10')
+    input(type='hidden' name='attr_speed' value='30')
+    input(type='hidden' name='attr_hp' value='0')
+    input(type='hidden' name='attr_hp_max' value='0')
+    input(type='hidden' name='attr_pb' value='0')
+    input(type='hidden' name='attr_speed' value='30')
+    input(type='hidden' name='attr_ac' value='30')
+
+    each ability in pc.abilities
+        input(type='hidden' name=`attr_${ability.name}_mod` value='0')
+        input(type='hidden' name=`attr_${ability.name}_save_bonus` value='0')
+        input(type='hidden' name=`attr_${ability.name}_base` value='10')
+    each skill in pc.skills
+        input(type='hidden' name=`attr_${skill.attribute}_bonus` value='0')

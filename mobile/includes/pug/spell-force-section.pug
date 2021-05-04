@@ -1,0 +1,28 @@
+include ./tools/variables.pug
+
+section.spell-force
+    .container
+        .row
+            fieldset.repeating_spell
+                .col-12
+                    .spell-content
+                        .spell-content__spell-icon
+                        .spell-content__btn-force
+                            .spell-content__force
+                                span.spell-force Force
+                            .spell-content__ft
+                                span.spell-force(type='text' name="attr_spellrange")
+                                span.spell-force ft
+                        .spell-content__name
+                            input.spell-force(style="width: 100%;" type='text' name="attr_spellname")
+                        .spell-content__spell
+                            span.spell-content__damage(type='hidden') Spell
+                            input.skill__content-prof-hidden(style="width: 15%; color: #54b8ec;" type='text' name='attr_spellbonus')
+                            span.spell-content__border-right
+                            input.skill__content-prof-hidden(style="width: 10%; color: #EC0B8C;" type='text' name='attr_spelldamage')
+                            span.spell-content__damage(type='hidden') Damage
+                        .spell-content__border-bottom
+                        .spell-content__button-position
+                            button.spell-content__roll-button(type="roll" value="@{rollbase}" name="roll_spell")
+                                span.spell-content__button-name Roll
+                                span.spell-content__button-border-right

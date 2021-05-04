@@ -1,0 +1,5 @@
+mixin segmentNameButton(name, ariaLabel = `${name}`)
+    button.btn.roll.segment.segment__button(type='button' aria-label=ariaLabel)
+        .segment__hex
+            - var buttonName = name;
+            span.segment__content(name=`${name}`) #{buttonName}

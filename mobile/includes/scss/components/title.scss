@@ -1,0 +1,29 @@
+.title {
+    $self: &;
+    
+    align-items: center;
+    display: flex;
+    flex-flow: column wrap;
+
+    &__name {
+        color: $primary-font-color;
+        font-family: $primary-font-stack;
+        font-size: $mdm-font-size;
+        font-weight: $primary-font-weight;
+        padding-bottom: 5px;
+        text-transform: uppercase;
+    }
+
+    &__divider-outer {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    &__divider-inner {
+        background: $primary-gradient;
+        height: 4px;
+        width: 100%;
+    }
+}

@@ -1,0 +1,7 @@
+// IMPORTING THE VARIABLES && DEFAULT VALUES
+@import "./includes/scss/variables.scss";
+@import "./includes/scss/tools/default-values.scss";
+
+// IMPORTING THE STYLE
+@import "./includes/scss/bootstrap/bootstrap-grid.scss";
+@import "./includes/scss/layout/main.scss";

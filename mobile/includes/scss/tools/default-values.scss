@@ -1,0 +1,7 @@
+.default-values {
+    $self: &;
+    
+    &--hidden {
+        display: none;
+    }
+}

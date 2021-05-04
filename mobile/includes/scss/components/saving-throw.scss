@@ -1,0 +1,96 @@
+.saving-throw {
+    $self: &;
+
+    align-items: center;
+    background-color: $primary-saving-throw-alpha-1 !important;
+    border: $primary-border-size solid $primary-saving-throw-color !important;
+    border-radius: $tertiary-border-radius !important;
+    display: flex !important;
+    flex-flow: row nowrap;
+    height: 50px;
+    margin: 10px 0 !important;
+    order: 1;
+    padding-right: 15px !important;
+    position: relative;
+    width: 100% !important;
+
+    &__pill-sml {
+        align-items: center;
+        background-color: $primary-saving-throw-color;
+        border-radius: $tertiary-border-radius;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        width: 62px;
+        min-width: 42px;
+    }
+
+    &__mod {
+        color: $primary-font-color;
+        font-family: $primary-font-stack;
+        font-size: 25px;
+        font-weight: $primary-font-weight;
+        z-index: 4;
+    }
+
+    &__mod-hidden:not([value^='-']) ~  &__mod::before {
+        content: '+';
+    }
+
+    &__pill-lrg {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: flex-start;
+        padding-left: 10px;
+    }
+
+    &__content {
+        align-items: center;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        z-index: 3;
+    }
+
+    &__content-name {
+        color: $primary-font-color;
+        font-family: $primary-font-stack;
+        font-size: $xxxsml-font-size;
+        font-weight: $secondary-font-weight;
+    }
+
+    &__content-save-string {
+        color: $primary-font-color;
+        display: inline-block;;
+        font-family: $primary-font-stack;
+        font-size: $xxxsml-font-size;
+        font-weight: $secondary-font-weight;
+        padding-left: 5px;
+    }
+
+    // Pressed State
+    &:active {
+        background-color: $primary-saving-throw-alpha-2 !important;
+    }
+}
+
+.saving-throw__content-prof-hidden[value*='pb'] ~ .saving-throw {
+    background-color: $secondary-saving-throw-alpha-1 !important;
+    border: $primary-border-size solid $proficient-color !important;
+
+    .saving-throw__pill-sml {
+        background-color: $proficient-color;
+    }
+
+    &:active {
+        background-color: $secondary-saving-throw-alpha-2 !important;
+    }
+}
+
+.col-6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

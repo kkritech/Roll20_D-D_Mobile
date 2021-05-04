@@ -1,0 +1,10 @@
+include ./tools/variables.pug
+include ./segment.pug
+include ./title.pug
+
+section.segments
+    .container
+        .row
+            each segment in pc.segment
+                .col-6
+                    +segmentNameButton(segment.name)

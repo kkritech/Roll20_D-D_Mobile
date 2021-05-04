@@ -1,0 +1,14 @@
+mixin savingThrow(roll, name, ariaLabel = `${name} save roll`)
+    input.saving-throw__content-prof-hidden(type='hidden' name=`attr_${name}_save_prof`)
+    button.btn.roll.saving-throw(type='roll' value!=`@{${name}_save_roll}` aria-label=`${ariaLabel}`)
+        input(type='hidden' name=`attr_${name}_save_roll` value!=roll)
+        .saving-throw__pill-sml
+            input.saving-throw__mod-hidden(type='hidden' name=`attr_${name}_save_bonus`)
+            span.saving-throw__mod(name=`attr_${name}_save_bonus`)
+        .saving-throw__pill-lrg
+            span.saving-throw__content
+                span.saving-throw__content-name(data-i18n=`${name}`)
+                span.saving-throw__content-save-string
+                    | Save
+
+

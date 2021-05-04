@@ -1,0 +1,128 @@
+.ability {
+    $self: &;
+    $default-height: 125px;
+    $default-width: 125px;
+
+    @media screen {
+        
+    }
+    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px !important;
+    position: relative;
+
+    &__hex {
+        align-items: center;
+        display: flex;
+        filter: $primary-drop-shadow;
+        flex-flow: column wrap;
+        height: $default-height;
+        justify-content: center;
+        width: $default-width;
+
+        &::before {
+            background-image: url('#{$image-prefix}general/hex-outline.svg#{$image-sufix}');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: '';
+            height: $default-height - 10px;
+            opacity: 1;
+            position: absolute;
+            top: 0;
+            width: $default-width - 10px;
+            min-height: 100px;
+            min-width: 100px;
+        }
+
+        &::after {
+            background-image: url('#{$image-prefix}general/hex-outline-press.svg#{$image-sufix}');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: '';
+            height: $default-height - 10px;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: $default-width - 10px;
+        }
+
+        @media (min-width: $lg) {
+            &::before,  &::after {
+                height: $default-height - 10px;
+                width: $default-width - 10px;
+            }
+        }
+
+        @media (min-width: $xl) {
+            &::before,  &::after {
+                height: $default-height - 5px;
+                width: $default-width - 5px;
+            }
+        }
+    }
+
+    &__mod {
+        color: $primary-font-color;
+        font-family: $primary-font-stack;
+        font-size: $lrg-font-size - 5px;
+        font-weight: $primary-font-weight;
+        margin-bottom: 10px;
+        z-index: 2;
+    }
+
+    &__mod-hidden:not([value^='-']) ~  &__mod::before {
+        content: '+';
+    }
+
+    &__content {
+        color: $primary-font-color;
+        font-family: $primary-font-stack;
+        font-size: $xxsml-font-size;
+        font-weight: $secondary-font-weight;
+        z-index: 2;
+        @media (min-width: $lg) {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__pill {
+        align-items: center;
+        background-image: url('#{$image-prefix}general/small-pill-outline.svg#{$image-sufix}');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        bottom: -5%;
+        display: flex;
+        filter: $primary-drop-shadow;
+        height: 30px;
+        justify-content: center;
+        position: absolute;
+        width: 40px;
+        z-index: 3;
+
+        @media (min-width: $lg) {
+            bottom: 0;
+        }
+    }
+
+    &__score {
+        color: $primary-font-color;
+        font-family: $primary-font-stack;
+        font-size: $sml-font-size;
+        font-weight: $tertiary-font-weight;
+    }
+
+    // Pressed State
+    &:active {
+        #{ $self }__hex {
+            &::after {
+                opacity: 1;
+                z-index: 1;
+            }
+        }
+    }
+}

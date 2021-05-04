@@ -1,0 +1,14 @@
+mixin skillButton(roll, name, ariaLabel = `${name} roll`)
+    button.btn.roll.skill(type='roll' value!=`@{${name}_roll}` aria-label=`${ariaLabel}`)
+        input(type='hidden' name=`attr_${name}_roll` value!=roll)
+        .skill__wrapper
+            .skill__left
+                .skill__icon
+                    img(src=`${imagePrefix}skills/skill-${name}.png` srcset=`${imagePrefix}skills/skill-${name}-2x.png 2x` class='skill__icon-image' alt=`${name} Skill Icon` loading='lazy')
+                .skill__content
+                    span.skill__content-name(data-i18n=`${name}`)
+                    input.skill__content-prof-hidden(type='hidden' name=`attr_${name}_prof`)
+                    span.skill__content-prof(data-i18n='proficient')
+            .skill__right
+                input.skill__mod-hidden(type='hidden' name=`attr_${name}_bonus`)
+                span.skill__mod(name=`attr_${name}_bonus`)

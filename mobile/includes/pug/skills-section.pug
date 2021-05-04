@@ -1,0 +1,14 @@
+include ./tools/variables.pug
+include ./skill.pug
+include ./title.pug
+
+section.skills
+    .container
+        .row
+            .col
+                +sectionTitle('skills')
+        .row
+            each skill in pc.skills
+                .col-12
+                    - const roll =`@{wtype}&{template:simple} {{rname=^{${skill.attribute}-u}}} {{mod=@{${skill.attribute}_bonus}}} {{r1=[[@{d20}+@{${skill.attribute}_bonus}[Mods]@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}`
+                    +skillButton(roll, skill.attribute)

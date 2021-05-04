@@ -1,0 +1,14 @@
+include ./tools/variables.pug
+include ./ability.pug
+include ./title.pug
+
+section.abilities
+    .container
+        .row
+            .col
+                +sectionTitle('abilities')
+        .row
+            each ability in pc.abilities
+                .col-4.col-lg-2
+                    - const roll = `@{wtype}&{template:simple} {{rname=^{${ability.name}-u}}} {{mod=@{${ability.name}_mod}@{jack_bonus}}} {{r1=[[@{d20}+@{${ability.name}_mod}@{jack_attr}[${ability.shortname}]]]}} @{rtype}+@{${ability.name}_mod}@{jack_attr}[${ability.shortname}]]]}} @{charname_output}`;
+                    +abilityButton(roll, ability.name)

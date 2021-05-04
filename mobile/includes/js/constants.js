@@ -1,0 +1,1 @@
+const HIDDEN_MODAL = 'hidden';

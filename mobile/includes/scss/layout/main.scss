@@ -1,0 +1,56 @@
+/* IMPORTING THE STYLES OF ALL THE INCLUDED FILES IN THE MAIN FILE */ 
+@import '../components/header.scss';
+@import '../components/header-details.scss';
+@import '../components/headers-details.scss';
+
+@import '../components/buttons.scss';
+@import '../components/button.scss';
+@import '../components/initiative.scss';
+
+@import '../components/skill.scss';
+@import '../components/skills-section.scss';
+
+@import '../components/saving-throw.scss';
+@import '../components/saving-throws-section.scss';
+
+@import '../components/segment.scss';
+@import '../components/segment-section.scss';
+@import '../components/attack-type.scss';
+
+@import '../components/ability.scss';
+@import '../components/abilities-section.scss';
+
+@import '../components/attack-force-section.scss';
+@import '../components/spell-force-section.scss';
+
+@import '../components/title.scss';
+@import '../components/charsheet.scss';
+@import '../components/rolltemplates/rolltemplates';
+
+@import '../components/dismiss.scss';
+@import '../components/attack-selected.scss';
+@import '../components/attack-roll.scss';
+@import '../components/attack-damage.scss';
+
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+.container {
+    padding: 0%;
+}
+
+.row {
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 100%;
+
+    @media (min-width: $sm) {
+        width: min-content;
+        flex: 1 1 auto;
+    }
+}
